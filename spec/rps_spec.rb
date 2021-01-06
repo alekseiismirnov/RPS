@@ -21,4 +21,9 @@ describe RPS do
     game = RPS.new()
     expect(game.wins?("paper", "rock")).to(eq(true))
   end
+
+  it("returns list of all possible hands") do
+    game = RPS.new()
+    expect(game.possible_hands - ['scissors', 'paper', 'rock']).to eq([])
+  end
 end
