@@ -14,7 +14,12 @@ class Game
 
     computers_hand = rps_round.possible_hands.sample
     puts "Your move:"
+    
     players_hand = gets.chomp
+    while not rps_round.possible_hands.include? players_hand
+      puts "Check your input"
+      players_hand = gets.chomp
+    end
 
     puts "Computer says: \"#{computers_hand}\""
 
